@@ -2,8 +2,9 @@ import axios from 'axios';
 
 // XAMPP: your PHP API lives at http://localhost/portfolio-review/api
 // Adjust this if you put the project folder under a different name.
-const BASE_URL = 'http://localhost/portfolio-review/api';
-
+const BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  'http://localhost/portfolio-review/api';
 const api = axios.create({ baseURL: BASE_URL });
 
 api.interceptors.request.use((config) => {
